@@ -1,0 +1,89 @@
+{% extends 'minerals/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mineral__container">	
+<h1 class="mineral__name">{{mineral.name}}</h1>
+	<div class="mineral__image-bg">
+		<img class="mineral__image" src="{% static 'minerals/images/' %}{{mineral.name}}.jpg"  alt="{{mineral.name}}">
+		<p class="mineral__caption">{{mineral.image_caption}}</p>
+	</div>
+	<div class="mineral__table-container">
+	
+	<table class="mineral__table">
+	<tr>
+		<td>Category</td>
+		<td class="mineral__category">{{mineral.category}}</td>
+	</tr>
+	<tr>
+		<td>Formula</td>
+		<td class="mineral__formula">{{mineral.formula|safe}}</td>
+	</tr>
+	{% if mineral.strunz_classification %}
+	<tr>
+		<td>Strunz Classification</td>
+		<td>{{mineral.strunz_classification}}</td>
+	</tr>
+	{% endif %}
+	<tr>
+		<td>Color</td>
+		<td>{{mineral.color}}</td>
+	</tr>
+	<tr>
+		<td>Crystal System</td>
+		<td>{{mineral.crystal_system}}</td>
+	</tr>
+	<tr>
+		<td>Unit Cell</td>
+		<td>{{mineral.unit_cell}}</td>
+	</tr>
+	{% if mineral.crystal_symmerty %}
+	<tr>
+		<td>Crystal Symmetry</td>
+		<td>{{mineral.crystal_symmetry}}</td>
+	</tr>
+	{% endif %}
+	<tr>
+		<td>Cleavage</td>
+		<td>{{mineral.cleavage}}</td>
+	</tr>
+	<tr>
+		<td>Mohs Scale Hardness</td>
+		<td>{{mineral.mohs_scale_hardness}}</td>
+	</tr>
+	<tr>
+		<td>Luster</td>
+		<td>{{mineral.luster}}</td>
+	</tr>
+	<tr>
+		<td>Streak</td>
+		<td>{{mineral.streak}}</td>
+	</tr>
+	<tr>
+		<td>Diaphaneity</td>
+		<td>{{mineral.diaphaneity}}</td>
+	</tr>
+	<tr>
+		<td>Optical Properties</td>
+		<td>{{mineral.optical_properties}}</td>
+	</tr>
+	<tr>
+		<td>Refractive index</td>
+		<td>{{mineral.refractive_index}}</td>
+	</tr>
+	<tr>
+		<td>Crystal Habit</td>
+		<td>{{mineral.crystal_habit}}</td>
+	</tr>
+	<tr>
+		<td>Specific Gravity</td>
+		<td>{{mineral.specific_gravity}}</td>
+	</tr>
+	<tr>
+		<td>Group</td>
+		<td>{{mineral.group}}</td>
+	</tr>
+	</table>
+	</div>
+	</div>
+{% endblock %}
